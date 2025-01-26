@@ -6,7 +6,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const Tab = createBottomTabNavigator();
 
-const OrdersTabNavigator = () => {
+const OrdersTabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       initialRouteName="Current Order"

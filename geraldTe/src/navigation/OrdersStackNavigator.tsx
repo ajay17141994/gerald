@@ -5,7 +5,7 @@ import CartScreen from '../screens/CartScreen';
 
 const Stack = createStackNavigator();
 
-const OrdersStackNavigator = () => {
+const OrdersStackNavigator: React.FC = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen

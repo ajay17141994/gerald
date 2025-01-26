@@ -1,13 +1,19 @@
 import React, { useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Animated } from 'react-native';
 
-const orders = [
+interface Order {
+  id: string;
+  title: string;
+  status: string;
+}
+
+const orders: Order[] = [
   { id: '001', title: 'Smartwatch', status: 'In Progress' },
   { id: '002', title: 'Bluetooth Headphones', status: 'In Progress' },
   { id: '003', title: 'Wireless Charger', status: 'In Progress' },
 ];
 
-const CurrentOrderScreen = () => {
+const CurrentOrderScreen: React.FC = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -18,11 +24,11 @@ const CurrentOrderScreen = () => {
     }).start();
   }, []);
 
-  const handleTrackOrder = (orderId) => {
+  const handleTrackOrder = (orderId: string) => {
     alert(`Tracking Order #${orderId}`);
   };
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: { item: Order }) => (
     <OrderCard
       orderId={item.id}
       title={item.title}
@@ -47,7 +53,14 @@ const CurrentOrderScreen = () => {
   );
 };
 
-const OrderCard = ({ orderId, title, status, onTrackOrder }) => (
+interface OrderCardProps {
+  orderId: string;
+  title: string;
+  status: string;
+  onTrackOrder: (orderId: string) => void;
+}
+
+const OrderCard: React.FC<OrderCardProps> = ({ orderId, title, status, onTrackOrder }) => (
   <View style={styles.orderCard}>
     <Text style={styles.orderTitle}>
       Order #{orderId}: {title}

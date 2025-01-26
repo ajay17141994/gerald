@@ -6,13 +6,14 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MainTabNavigator from './TabNavigator'; 
 import OrdersStackNavigator from './OrdersStackNavigator';
 import CartScreen from '../screens/CartScreen';
+import StartScreen from '../screens';
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+const DrawerNavigator: React.FC = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
+      initialRouteName="Start"
       screenOptions={{
         headerShown: true,
         drawerStyle: styles.drawerStyle,
@@ -36,6 +37,19 @@ const DrawerNavigator = () => {
         </View>
       )}
     >
+      <Drawer.Screen
+        name="Start"
+        component={StartScreen}
+        options={{
+          drawerIcon: ({ focused }) => (
+            <FontAwesome5
+              name={'infinity'}
+              size={20}
+              color={focused ? '#fff' : '#A1A1A1'}
+            />
+          ),
+        }}
+      />
       <Drawer.Screen
         name="Home"
         component={MainTabNavigator}
@@ -91,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   drawerHeader: {
-    height: 80,
+    height: 110,
     backgroundColor: '#2D2D2D',
     justifyContent: 'center',
     alignItems: 'center',

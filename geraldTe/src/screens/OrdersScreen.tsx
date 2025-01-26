@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const OrdersScreen = () => {
+const OrdersScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your Orders</Text>

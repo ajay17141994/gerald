@@ -1,28 +1,37 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const CartScreen = () => {
+interface CartItem {
+  name: string;
+  price: number;
+}
+
+const CartScreen: React.FC = () => {
+  const cartItems: CartItem[] = [
+    { name: 'Awesome Product', price: 20.00 },
+    { name: 'Another Cool Product', price: 35.00 }
+  ];
+
+  const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your Cart</Text>
       <Text style={styles.subtitle}>Review your items before checkout</Text>
 
-      <View style={styles.cartItem}>
-        <Text style={styles.cartItemText}>Item 1: Awesome Product</Text>
-        <Text style={styles.cartItemPrice}>$20.00</Text>
-      </View>
-
-      <View style={styles.cartItem}>
-        <Text style={styles.cartItemText}>Item 2: Another Cool Product</Text>
-        <Text style={styles.cartItemPrice}>$35.00</Text>
-      </View>
+      {cartItems.map((item, index) => (
+        <View key={index} style={styles.cartItem}>
+          <Text style={styles.cartItemText}>Item {index + 1}: {item.name}</Text>
+          <Text style={styles.cartItemPrice}>${item.price.toFixed(2)}</Text>
+        </View>
+      ))}
 
       <TouchableOpacity style={styles.button} onPress={() => alert('Proceeding to Checkout')}>
         <Text style={styles.buttonText}>Proceed to Checkout</Text>
       </TouchableOpacity>
 
       <View style={styles.totalSection}>
-        <Text style={styles.totalText}>Total: $55.00</Text>
+        <Text style={styles.totalText}>Total: ${totalAmount.toFixed(2)}</Text>
       </View>
     </View>
   );

@@ -4,12 +4,11 @@ import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
 import OrdersStackNavigator from './OrdersStackNavigator';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 const Tab = createBottomTabNavigator();
 
-const MainTabNavigator = () => {
+const MainTabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -19,12 +18,19 @@ const MainTabNavigator = () => {
         headerShown: false
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ 
+      <Tab.Screen 
+        name="Home" 
+        component={HomeScreen} 
+        options={{ 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size} />
           ),
-        }}/>
-      <Tab.Screen name="Cart" component={CartScreen} options={{ 
+        }} 
+      />
+      <Tab.Screen 
+        name="Cart" 
+        component={CartScreen} 
+        options={{ 
           tabBarIcon: ({ color, size }) => (
             <Ionicons 
               name={'cart'} 
@@ -32,8 +38,12 @@ const MainTabNavigator = () => {
               color={color} 
             />
           ),
-        }}/>
-      <Tab.Screen name="Orders" component={OrdersStackNavigator} options={{ 
+        }} 
+      />
+      <Tab.Screen 
+        name="Orders" 
+        component={OrdersStackNavigator} 
+        options={{ 
           tabBarIcon: ({ color, size }) => (
             <FontAwesome 
               name={'filter'} 
@@ -41,12 +51,10 @@ const MainTabNavigator = () => {
               color={color} 
             />
           ),
-        }}/>
+        }} 
+      />
     </Tab.Navigator>
   );
 };
 
 export default MainTabNavigator;
-
-
-

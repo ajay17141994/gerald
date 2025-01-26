@@ -1,7 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Animated } from 'react-native';
 
-const OrderCard = ({ orderId, title, date, status, onReorder }) => {
+interface OrderCardProps {
+  orderId: string;
+  title: string;
+  date: string;
+  status: string;
+  onReorder: () => void;
+}
+
+const OrderCard: React.FC<OrderCardProps> = ({ orderId, title, date, status, onReorder }) => {
   const cardOpacity = useRef(new Animated.Value(0)).current;
   const cardTranslateY = useRef(new Animated.Value(20)).current;
 
@@ -45,7 +53,7 @@ const OrderCard = ({ orderId, title, date, status, onReorder }) => {
   );
 };
 
-const getStatusColor = (status) => {
+const getStatusColor = (status: string) => {
   switch (status) {
     case 'Delivered':
       return '#28a745';
@@ -58,8 +66,8 @@ const getStatusColor = (status) => {
   }
 };
 
-const PastOrderScreen = () => {
-  const handleReorder = (orderId) => {
+const PastOrderScreen: React.FC = () => {
+  const handleReorder = (orderId: string) => {
     alert(`Reordering Order #${orderId}...`);
   };
 

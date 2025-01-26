@@ -5,7 +5,7 @@ import PastOrderScreen from '../screens/PastOrderScreen';
 
 const Stack = createStackNavigator();
 
-export const OrdersStackNavigator = () => {
+export const OrdersStackNavigator: React.FC = () => {
   return (
     <Stack.Navigator initialRouteName="CurrentOrder">
       <Stack.Screen name="Current Order" component={CurrentOrderScreen} />
@@ -13,4 +13,3 @@ export const OrdersStackNavigator = () => {
     </Stack.Navigator>
   );
 };
-

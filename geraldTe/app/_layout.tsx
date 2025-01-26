@@ -1,6 +1,8 @@
 import React from 'react';
 import DrawerNavigator from '@/src/navigation/DrawerNavigator';
 
-export default function Layout() {
+const Layout: React.FC = () => {
   return <DrawerNavigator />;
-}
+};
+
+export default Layout;
