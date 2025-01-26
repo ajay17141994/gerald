@@ -8,7 +8,7 @@ This React Native EXPO application demonstrates how to implement three types of 
 
 Each navigation type is linked together to provide a seamless user experience.
 
-- Clone the Repo 
+- Clone the Repo and navigate to /geraldTe
     - https://github.com/ajay17141994/gerald.git
 
 - Run yarn install command
