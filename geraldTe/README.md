@@ -1,4 +1,4 @@
-#Overview
+# Overview
 
 This React Native EXPO application demonstrates how to implement three types of navigation in a React Native app:
 
@@ -14,12 +14,13 @@ Each navigation type is linked together to provide a seamless user experience.
 - Run yarn install command
     - This will install all the dependencies
 
--Run yarn start
+- Run yarn start
     - this will start the application
 
 - Press i for IOS simulator, a for android emulator and w for web browser in order to run the application
 
-#File Structure
+# File Structure
+```
 /src
   /screens
     CartScreen.tsx
@@ -35,13 +36,13 @@ Each navigation type is linked together to provide a seamless user experience.
     StackNavigator.tsx
     MainTabNavigator.tsx
 /app/_layout.tsx
-
-#Screens
+```
+# Screens
 StartScreen
 The StartScreen introduces the user to the app with animated elements that fade in and slide from the bottom. It contains an app description and navigation hints for users.
 
     Animations: Title fades in, subtitle slides up, sections animate in with opacity and translation.
-    Sections: Provide details about the app's features, including Drawer Navigation, Tab Navigation, and Stack Navigation.
+    Sections: Provide details about the app's features, including Drawer Navigation, Tab Navigation, and Stack Navigation.```
 
 HomeScreen
 The HomeScreen is a dummy home page with animated sections. It introduces the user to the app's services and guides them to get started.
@@ -57,7 +58,7 @@ These screens display the current and past orders of a user. The OrdersTabNaviga
     Current Order: Shows ongoing orders.
     Past Order: Displays completed orders.
 
-#Navigators
+# Navigators
 DrawerNavigator
 DrawerNavigator is responsible for handling the side drawer that slides in when the user clicks on the hamburger menu.
 
@@ -83,7 +84,8 @@ MainTabNavigator is a bottom tab navigator with three tabs:
     Cart: A tab that leads to the CartScreen.
     Orders: A tab that leads to the OrdersStackNavigator.
 
-#Dependencies
+# Dependencies
+```
 -@react-navigation/native - For navigation management.
 -@react-navigation/drawer - For the drawer navigation.
 -@react-navigation/stack - For stack navigation.
@@ -91,7 +93,7 @@ MainTabNavigator is a bottom tab navigator with three tabs:
 -react-native-gesture-handler - To manage gestures in the app.
 -react-native-reanimated - For animations.
 -@expo/vector-icons - For vector icons like Ionicons and FontAwesome.
-
+```
 [Watch project recording](recording.mov)
 
 If you are unable to see CLICK ON VIEW RAW and download the same
